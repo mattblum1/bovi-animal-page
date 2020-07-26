@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { AppComponent } from './app.component';
+import { metaReducers, reducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import { reducers, metaReducers } from './reducers';
     BrowserModule,
     StoreModule.forRoot(reducers, {
       metaReducers
-    })
+    }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
