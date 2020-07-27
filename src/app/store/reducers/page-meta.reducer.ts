@@ -1,13 +1,15 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { loadDatas } from '../actions';
 import { getInitialState } from '../initial-state';
-import { PageMetaState } from '../models';
+import { PageMetaState } from '../models/page-meta.model';
 
 export const initialState: PageMetaState = {
   pageMetaState: { sections: [] }
 }
 
-export const intialState = getInitialState().pageMetaState;
+import { initialPageMetaState } from '../reducers'
+
+export const intialState = initialPageMetaState;
 
 export const reducers = createReducer(
   initialState,

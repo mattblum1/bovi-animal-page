@@ -1,10 +1,10 @@
-import { State } from "../models";
-import { initialAnimalState, itemMetaState, pageMetaState } from '../reducers'
+import { State } from "../models/state.model";
+import { initialAnimalState, initialMetaState, initialPageMetaState } from '../reducers'
 
 export function getInitialState(): State {
     return {
         animalDataState: initialAnimalState,
-        itemMetaState: itemMetaState,
-        pageMetaState: pageMetaState
+        itemMetaState: initialMetaState,
+        pageMetaState: initialPageMetaState
     }
 }

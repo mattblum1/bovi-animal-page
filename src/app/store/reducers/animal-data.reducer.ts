@@ -1,13 +1,16 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { loadDatas } from '../actions';
 import { getInitialState } from '../initial-state';
-import { AnimalDataState } from '../models';
+import { AnimalDataState } from '../models/animal-data.model';
 
 export const initialState: AnimalDataState = {
   animalDataState: []
 }
 
-export const intialState = getInitialState().animalDataState;
+import { initialAnimalState } from '../reducers'
+
+
+export const intialState = initialAnimalState;
 
 export const reducers = createReducer(
   initialState,

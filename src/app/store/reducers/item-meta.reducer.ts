@@ -1,13 +1,13 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { loadDatas } from '../actions';
-import { getInitialState } from '../initial-state';
-import { ItemMetaState } from '../models';
+import { initialMetaState, initialPageMetaState} from '../reducers'
+import { ItemMetaState } from '../models/item-meta.model';
 
 export const initialState: ItemMetaState = {
   itemMetaState: { dataType: '', name: '', tags: [], aggregationFunction: null, shortName: '', link: null, units: null, description: '' }
 }
 
-export const intialState = getInitialState().itemMetaState;
+export const intialState = initialMetaState;
 
 export const reducers = createReducer(
   intialState,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loadDatas } from './store/actions';
-import { State } from './store/models';
+import { State } from './store/models/state.model';
 
 @Component({
   selector: 'app-root',
