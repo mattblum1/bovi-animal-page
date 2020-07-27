@@ -1,6 +1,10 @@
-import { AnimalData, ItemMeta, PageMeta, State } from '../models'
-import { Maybe } from '../../monads';
+import { State } from "../models";
+import { initialAnimalState, itemMetaState, pageMetaState } from '../reducers'
 
-export const initializeState = (): State => {
-    return { animalData: Maybe.nothing(), itemMetas: [], pageMeta: Maybe.nothing() };
-};
+export function getInitialState(): State {
+    return {
+        animalDataState: initialAnimalState,
+        itemMetaState: itemMetaState,
+        pageMetaState: pageMetaState
+    }
+}

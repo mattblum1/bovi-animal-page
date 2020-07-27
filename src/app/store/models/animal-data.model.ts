@@ -1,3 +1,9 @@
+import { Maybe } from 'src/app/monads';
+
+export interface AnimalDataState {
+    animalDataState: AnimalData[];
+}
+
 export interface AnimalData {
     id:       number;
     SIR:      string;

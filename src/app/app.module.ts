@@ -5,11 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { AppComponent } from './app.component';
-import { reducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeLogger } from 'ngrx-store-logger';
 import { State } from './store/models';
+import { reducers } from './store'
 
 export function logger(reducer: ActionReducer<State>): any {
   return storeLogger()(reducer);
@@ -23,7 +23,7 @@ export const metaReducers: MetaReducer<State>[] = !environment.production ? [log
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers as any, {
+    StoreModule.forRoot(reducers, {
       metaReducers, 
       runtimeChecks: {
         strictStateImmutability: true,

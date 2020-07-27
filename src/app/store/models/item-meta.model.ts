@@ -1,3 +1,7 @@
+export interface ItemMetaState {
+    itemMetaState: ItemMeta;
+}
+
 export interface ItemMeta {
     dataType:            string;
     name:                string;
