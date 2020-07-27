@@ -9,7 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeLogger } from 'ngrx-store-logger';
 import { State } from './store/models/state.model';
-import { reducers } from './store'
+import { reducers } from './store/reducers'
 
 export function logger(reducer: ActionReducer<State>): any {
   return storeLogger()(reducer);
