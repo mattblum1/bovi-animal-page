@@ -1,5 +1,3 @@
-import { Maybe } from 'src/app/monads';
-
 export interface AnimalDataState {
     animalDataState: AnimalData[];
 }

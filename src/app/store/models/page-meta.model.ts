@@ -1,5 +1,3 @@
-import { Maybe } from 'src/app/monads/maybe';
-
 export interface PageMetaState {
     pageMetaState: PageMeta;
 }

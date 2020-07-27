@@ -2,7 +2,6 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { loadDatas } from '../actions';
 import { getInitialState } from '../initial-state';
 import { AnimalDataState } from '../models';
-import { Maybe } from '../../monads';
 
 export const initialState: AnimalDataState = {
   animalDataState: []
