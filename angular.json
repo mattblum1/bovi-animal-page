@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "bovi-animal-page"
+  "defaultProject": "bovi-animal-page",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
