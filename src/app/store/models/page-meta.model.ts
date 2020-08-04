@@ -1,12 +1,8 @@
 export interface PageMetaState {
-    pageMetaState: PageMeta;
-}
-
-export interface PageMeta {
-    sections: Section[];
+  sections: Section[];
 }
 
 export interface Section {
-    label: string;
-    items: string[];
+  label: string;
+  items: string[];
 }

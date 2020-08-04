@@ -1,8 +1,4 @@
 export interface AnimalDataState {
-  animalDataState: AnimalData;
-}
-
-export interface AnimalData {
   id: number;
   sir: string;
   dim: number;

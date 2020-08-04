@@ -3,16 +3,14 @@ import { loadData } from '../actions';
 import { ItemMetaState } from '../models/item-meta.model';
 
 export const initialMetaState: ItemMetaState = {
-  itemMetaState: {
-    dataType: '',
-    name: '',
-    tags: [],
-    aggregationFunction: null,
-    shortName: '',
-    link: null,
-    units: null,
-    description: '',
-  },
+  dataType: '',
+  name: '',
+  tags: [],
+  aggregationFunction: null,
+  shortName: '',
+  link: null,
+  units: null,
+  description: '',
 };
 
 export const reducers = createReducer(

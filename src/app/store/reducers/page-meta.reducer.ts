@@ -3,7 +3,7 @@ import { loadData } from '../actions';
 import { PageMetaState } from '../models/page-meta.model';
 
 export const initialPageMetaState: PageMetaState = {
-  pageMetaState: { sections: [] },
+  sections: [],
 };
 
 export const reducers = createReducer(
