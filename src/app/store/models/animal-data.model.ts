@@ -4,21 +4,21 @@ export interface AnimalDataState {
 
 export interface AnimalData {
     id:       number;
-    SIR:      string;
-    DIM:      number;
-    ApiId:    number;
-    AGEMO:    number;
-    Repro:    string;
-    LOCAT:    string;
-    Pen:      number;
-    REPRDate: null;
-    BarnNm:   string;
-    EART:     number;
-    BRD:      string;
-    LACT:     number;
-    DCC:      number;
-    Barn:     number;
-    LMILK:    number;
-    ECM:      number;
-    DREG:     string;
+    sir:      string;
+    dim:      number;
+    apiId:    number;
+    ageMo:    number;
+    repro:    string;
+    locat:    string;
+    pen:      number;
+    reprDate: null;
+    barnNm:   string;
+    earT:     number;
+    brd:      string;
+    lact:     number;
+    dcc:      number;
+    barn:     number;
+    lMilk:    number;
+    ecm:      number;
+    dreg:     string;
 }

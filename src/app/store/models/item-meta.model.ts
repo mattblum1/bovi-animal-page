@@ -14,6 +14,6 @@ export interface ItemMeta {
 }
 
 export enum Link {
-    CowpageIDANIMALID = "/cowpage/id/ANIMALID/",
-    Empty = "",
+    COW_PAGE_ID_ANIMAL_ID = "/cowpage/id/ANIMALID/",
+    EMPTY = "",
 }
