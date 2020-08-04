@@ -1,41 +1,44 @@
-import { NgModule } from '@angular/core';
+import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
+
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
-import { AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgModule } from '@angular/core';
+import { State } from './store/models/state.model';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { reducers } from './store/reducers';
 import { storeLogger } from 'ngrx-store-logger';
-import { State } from './store/models/state.model';
-import { reducers } from './store/reducers'
 
 export function logger(reducer: ActionReducer<State>): any {
   return storeLogger()(reducer);
 }
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [logger] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production
+  ? [logger]
+  : [];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
     StoreModule.forRoot(reducers, {
-      metaReducers, 
+      metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
-      }
+      },
     }),
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
