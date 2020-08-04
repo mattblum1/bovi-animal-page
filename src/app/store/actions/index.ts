@@ -1,1 +1,1 @@
-export { loadDatas, loadDatasFailure, loadDatasSuccess } from './data.actions'
+export { loadData, loadDataFailure, loadDataSuccess } from './data.actions';

@@ -1,15 +1,13 @@
 import { createAction, props } from '@ngrx/store';
 
-export const loadDatas = createAction(
-  '[Data] Load Datas'
-);
+export const loadData = createAction('[Data] Load Data');
 
-export const loadDatasSuccess = createAction(
-  '[Data] Load Datas Success',
+export const loadDataSuccess = createAction(
+  '[Data] Load Data Success',
   props<{ data: any }>()
 );
 
-export const loadDatasFailure = createAction(
-  '[Data] Load Datas Failure',
+export const loadDataFailure = createAction(
+  '[Data] Load Data Failure',
   props<{ error: any }>()
 );
