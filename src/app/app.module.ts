@@ -30,10 +30,10 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

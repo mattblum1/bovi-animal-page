@@ -1,13 +1,40 @@
 import { createAction, props } from '@ngrx/store';
 
-export const loadData = createAction('[Data] Load Data');
+// Animal Data
+export const loadAnimalData = createAction('[Data] Load Animal Data');
 
-export const loadDataSuccess = createAction(
-  '[Data] Load Data Success',
+export const loadAnimalDataSuccess = createAction(
+  '[Data] Load Animal Data Success',
   props<{ data: any }>()
 );
 
-export const loadDataFailure = createAction(
-  '[Data] Load Data Failure',
+export const loadAnimalDataFailure = createAction(
+  '[Data] Load Animal Data Failure',
+  props<{ error: any }>()
+);
+
+// Page Meta Data
+export const loadPageMetaData = createAction('[Data] Load Page Meta Data');
+
+export const loadPageMetaDataSuccess = createAction(
+  '[Data] Load Page Meta Data Success',
+  props<{ data: any }>()
+);
+
+export const loadPageMetaDataFailure = createAction(
+  '[Data] Load Page Meta Data Failure',
+  props<{ error: any }>()
+);
+
+// Item Meta Data
+export const loadItemMetaData = createAction('[Data] Load Item Meta Data');
+
+export const loadItemMetaDataSuccess = createAction(
+  '[Data] Load Item Meta Data Success',
+  props<{ data: any }>()
+);
+
+export const loadItemMetaDataFailure = createAction(
+  '[Data] Load Item Meta Data Failure',
   props<{ error: any }>()
 );

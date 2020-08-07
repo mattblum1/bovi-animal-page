@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
 import { ItemMetaState } from '../models/item-meta.model';
-import { loadData } from '../actions';
+import { loadAnimalData } from '../actions';
 
 export const initialMetaState: ItemMetaState[] = [
   {
@@ -18,7 +18,7 @@ export const initialMetaState: ItemMetaState[] = [
 
 export const reducers = createReducer(
   initialMetaState,
-  on(loadData, (state) => {
+  on(loadAnimalData, (state) => {
     console.warn('loadDatas fired', state);
     return state;
   })

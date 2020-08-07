@@ -1,7 +1,12 @@
+import {
+  loadAnimalData,
+  loadItemMetaData,
+  loadPageMetaData,
+} from './store/actions';
+
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { loadData } from './store/actions';
 import { State } from './store/models/state.model';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +17,6 @@ export class AppComponent {
   title = 'bovi-animal-page';
 
   constructor(private store: Store<State>) {
-    this.store.dispatch(loadData());
+    this.store.dispatch(loadAnimalData());
   }
 }

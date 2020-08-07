@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { loadData } from '../actions';
+
 import { PageMetaState } from '../models/page-meta.model';
+import { loadAnimalData } from '../actions';
 
 export const initialPageMetaState: PageMetaState = {
   sections: [],
@@ -8,7 +9,7 @@ export const initialPageMetaState: PageMetaState = {
 
 export const reducers = createReducer(
   initialPageMetaState,
-  on(loadData, (state) => {
+  on(loadAnimalData, (state) => {
     console.warn('loadDatas fired', state);
     return state;
   })

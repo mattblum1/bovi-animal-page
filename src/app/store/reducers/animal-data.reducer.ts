@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { loadData } from '../actions';
+
 import { AnimalDataState } from '../models/animal-data.model';
+import { loadAnimalData } from '../actions';
 
 export const initialAnimalState: AnimalDataState = {
   id: 0,
@@ -27,7 +28,7 @@ export const intialState = initialAnimalState;
 
 export const reducers = createReducer(
   initialAnimalState,
-  on(loadData, (state) => {
+  on(loadAnimalData, (state) => {
     console.warn('loadDatas fired', state);
     return state;
   })
