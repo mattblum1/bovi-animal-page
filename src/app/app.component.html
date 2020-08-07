@@ -1,15 +1,16 @@
-<div class="row header">
-  <div class="col-md">
-    <mat-toolbar class=".mb-5" color="primary">
-      <span>BoviSync Animal Page</span>
-    </mat-toolbar>
+<mat-toolbar>
+  <div class="row">
+    <div class="col-md">
+      <a href="https://bovisync.com"
+        ><img class="logo" src="../assets/images/logo.png"
+      /></a>
+    </div>
   </div>
-</div>
-<!-- .row -->
+</mat-toolbar>
 
-<div *ngIf="(animalData$ | async).payload as animal">
-  <div *ngIf="(itemMetaData$ | async).payload as itemMeta">
-    <div class="container-fluid">
+<div class="container-fluid pt-5 full-height">
+  <div *ngIf="(animalData$ | async).payload as animal">
+    <div *ngIf="(itemMetaData$ | async).payload as itemMeta">
       <div class="row">
         <div
           class="col-md"
@@ -21,21 +22,22 @@
               <!-- <mat-card-subtitle></mat-card-subtitle> -->
             </mat-card-header>
             <mat-card-content class="section-card">
-              <div class="row">
-                <div class="col-md">
-                  <!-- {{ itemMeta.filter(i => i.shortName === item).description }} -->
-                </div>
-              </div>
-              <!-- .row -->
               <div class="row" *ngFor="let item of section.items">
-                <div class="col-md-3">{{ item }}</div>
+                <div class="col-md-3">
+                  {{ item }}
+                  <mat-icon
+                    *ngIf="getItemMetaData(item)?.description"
+                    aria-hidden="false"
+                    [matTooltip]="getItemMetaData(item)?.description"
+                    >info</mat-icon
+                  >
+                  <!-- itemMeta: {{ handleNull(getItemMetaData(item).description) }} -->
+                </div>
                 <div class="col-md-9">{{ handleNull(animal[item]) }}</div>
               </div>
               <!-- .row -->
             </mat-card-content>
-            <mat-card-actions>
-              Buttons!
-            </mat-card-actions>
+            <!-- <mat-card-actions>Action Buttons</mat-card-actions> -->
           </mat-card>
         </div>
       </div>

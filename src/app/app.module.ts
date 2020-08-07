@@ -9,7 +9,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { State } from './store/models/state.model';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -34,6 +36,8 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
+    MatTooltipModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
