@@ -1,25 +1,47 @@
-<mat-toolbar color="primary">
-  <span>BoviSync Animal Page</span>
-</mat-toolbar>
-<div class="container">
-  <mat-card>
-    <button mat-raised-button color="primary">
-      CTA Button
-    </button>
-    <button mat-raised-button href="https://www.google.com/" target="_blank">
-      Secondary button
-    </button>
-  </mat-card>
-</div>
-
 <div class="row">
-  <div class="col-sm">
-    1
-  </div>
-  <div class="col-sm">
-    2
-  </div>
-  <div class="col-sm">
-    3
+  <div class="col-md">
+    <mat-toolbar class=".mb-5" color="primary">
+      <span>BoviSync Animal Page</span>
+    </mat-toolbar>
   </div>
 </div>
+<!-- .row -->
+
+<div class="container-fluid">
+  <!-- <div class="row">
+    <div class="col-md">
+      <mat-card>
+        <button mat-raised-button color="primary">
+          CTA Button
+        </button>
+        <button
+          mat-raised-button
+          href="https://www.google.com/"
+          target="_blank"
+        >
+          Secondary button
+        </button>
+      </mat-card>
+    </div>
+  </div> -->
+  <!-- .row -->
+
+  <div class="row">
+    <div class="col-sm">
+      <mat-card>
+        {{ animalData$ | async | json }}
+      </mat-card>
+    </div>
+    <div class="col-sm">
+      <mat-card>
+        {{ itemMetaData$ | async | json }}
+      </mat-card>
+    </div>
+    <div class="col-sm">
+      <mat-card>
+        {{ pageMetaData$ | async | json }}
+      </mat-card>
+    </div>
+  </div>
+</div>
+<!-- .container -->

@@ -38,5 +38,5 @@ export const reducers = createReducer(
 );
 
 export function animalDataReducer(state: AnimalDataState, action: Action) {
-  return reducers(state as any, action);
+  return reducers(state, action);
 }
