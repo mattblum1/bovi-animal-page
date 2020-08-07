@@ -8,7 +8,6 @@ export const initialPageMetaState: PageMetaState = { sections: [] };
 export const reducers = createReducer(
   initialPageMetaState,
   on(loadPageMetaData, (state) => {
-    console.warn('loadPageMetaData fired', state);
     return state;
   }),
   on(loadPageMetaDataSuccess, (state, { type, ...payload }) => {

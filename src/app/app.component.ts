@@ -38,4 +38,8 @@ export class AppComponent {
     this.store.dispatch(loadItemMetaData());
     this.store.dispatch(loadPageMetaData());
   }
+
+  handleNull(value: any) {
+    return value ? value : '-';
+  }
 }

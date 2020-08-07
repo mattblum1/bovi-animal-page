@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row header">
   <div class="col-md">
     <mat-toolbar class=".mb-5" color="primary">
       <span>BoviSync Animal Page</span>
@@ -7,8 +7,41 @@
 </div>
 <!-- .row -->
 
-<div class="container-fluid">
-  <!-- <div class="row">
+<div *ngIf="(animalData$ | async).payload as animal">
+  <div *ngIf="(itemMetaData$ | async).payload as itemMeta">
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="col-md"
+          *ngFor="let section of (pageMetaData$ | async).payload?.sections"
+        >
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{ section.label }}</mat-card-title>
+              <!-- <mat-card-subtitle></mat-card-subtitle> -->
+            </mat-card-header>
+            <mat-card-content class="section-card">
+              <div class="row">
+                <div class="col-md">
+                  <!-- {{ itemMeta.filter(i => i.shortName === item).description }} -->
+                </div>
+              </div>
+              <!-- .row -->
+              <div class="row" *ngFor="let item of section.items">
+                <div class="col-md-3">{{ item }}</div>
+                <div class="col-md-9">{{ handleNull(animal[item]) }}</div>
+              </div>
+              <!-- .row -->
+            </mat-card-content>
+            <mat-card-actions>
+              Buttons!
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <!-- .row -->
+
+      <!-- <div class="row">
     <div class="col-md">
       <mat-card>
         <button mat-raised-button color="primary">
@@ -24,9 +57,9 @@
       </mat-card>
     </div>
   </div> -->
-  <!-- .row -->
+      <!-- .row -->
 
-  <div class="row">
+      <!-- <div class="row">
     <div class="col-sm">
       <mat-card>
         {{ animalData$ | async | json }}
@@ -42,6 +75,8 @@
         {{ pageMetaData$ | async | json }}
       </mat-card>
     </div>
+  </div> -->
+    </div>
+    <!-- .container -->
   </div>
 </div>
-<!-- .container -->
