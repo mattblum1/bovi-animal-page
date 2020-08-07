@@ -1,8 +1,12 @@
 import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { BovisyncService } from './services';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { DataEffects } from './store/effects';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -29,6 +33,7 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -36,9 +41,10 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
         strictActionImmutability: true,
       },
     }),
+    EffectsModule.forRoot([DataEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [],
+  providers: [BovisyncService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

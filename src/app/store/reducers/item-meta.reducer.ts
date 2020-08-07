@@ -1,17 +1,20 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { loadData } from '../actions';
-import { ItemMetaState } from '../models/item-meta.model';
 
-export const initialMetaState: ItemMetaState = {
-  dataType: '',
-  name: '',
-  tags: [],
-  aggregationFunction: null,
-  shortName: '',
-  link: null,
-  units: null,
-  description: '',
-};
+import { ItemMetaState } from '../models/item-meta.model';
+import { loadData } from '../actions';
+
+export const initialMetaState: ItemMetaState[] = [
+  {
+    dataType: '',
+    name: '',
+    tags: [],
+    aggregationFunction: null,
+    shortName: '',
+    link: null,
+    units: null,
+    description: '',
+  },
+];
 
 export const reducers = createReducer(
   initialMetaState,
@@ -21,6 +24,6 @@ export const reducers = createReducer(
   })
 );
 
-export function itemMetaReducer(state: ItemMetaState, action: Action) {
+export function itemMetaReducer(state: ItemMetaState[], action: Action) {
   return reducers(state, action);
 }
