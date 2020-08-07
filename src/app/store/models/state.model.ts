@@ -4,6 +4,6 @@ import { PageMetaState } from './page-meta.model';
 
 export interface State {
   animalDataState: AnimalDataState;
-  itemMetaState: ItemMetaState[];
+  itemMetaState: ItemMetaState;
   pageMetaState: PageMetaState;
 }

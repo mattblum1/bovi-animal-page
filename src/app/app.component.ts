@@ -18,5 +18,7 @@ export class AppComponent {
 
   constructor(private store: Store<State>) {
     this.store.dispatch(loadAnimalData());
+    this.store.dispatch(loadItemMetaData());
+    this.store.dispatch(loadPageMetaData());
   }
 }

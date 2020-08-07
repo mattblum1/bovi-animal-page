@@ -1,4 +1,8 @@
 export interface ItemMetaState {
+  itemMetas: ItemMeta[];
+}
+
+export interface ItemMeta {
   dataType: string;
   name: string;
   tags: any[];

@@ -1,27 +1,28 @@
 import { Action, createReducer, on } from '@ngrx/store';
+import { loadAnimalData, loadAnimalDataSuccess } from '../actions';
 
 import { AnimalDataState } from '../models/animal-data.model';
-import { loadAnimalData } from '../actions';
+import { state } from '@angular/animations';
 
 export const initialAnimalState: AnimalDataState = {
   id: 0,
-  sir: '',
-  dim: 0,
-  apiId: 0,
-  ageMo: 0,
-  repro: '',
-  locat: '',
-  pen: 0,
-  reprDate: null,
-  barnNm: '',
-  earT: 0,
-  brd: '',
-  lact: 0,
-  dcc: 0,
-  barn: 0,
-  lMilk: 0,
-  ecm: 0,
-  dreg: '',
+  SIR: '',
+  DIM: 0,
+  ApiId: 0,
+  AGEMO: 0,
+  Repro: '',
+  LOCAT: '',
+  Pen: 0,
+  REPRDate: null,
+  BarnNm: '',
+  EART: 0,
+  BRD: '',
+  LACT: 0,
+  DCC: 0,
+  Barn: 0,
+  LMILK: 0,
+  ECM: 0,
+  DREG: '',
 };
 
 export const intialState = initialAnimalState;
@@ -29,8 +30,10 @@ export const intialState = initialAnimalState;
 export const reducers = createReducer(
   initialAnimalState,
   on(loadAnimalData, (state) => {
-    console.warn('loadDatas fired', state);
     return state;
+  }),
+  on(loadAnimalDataSuccess, (state, { type, ...payload }) => {
+    return payload;
   })
 );
 
