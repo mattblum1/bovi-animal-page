@@ -1,9 +1,16 @@
 <mat-toolbar>
   <div class="row">
     <div class="col-md">
-      <a href="https://bovisync.com"
-        ><img class="logo" src="../assets/images/logo.png"
-      /></a>
+      <div class="brand-container">
+        <a href="https://bovisync.com"
+          ><img class="logo" src="../assets/images/logo.png"
+        /></a>
+        <span
+          ><a mat-raised-button href="https://bovisync.farm" target="_blank"
+            >Login</a
+          ></span
+        >
+      </div>
     </div>
   </div>
 </mat-toolbar>
@@ -14,12 +21,14 @@
       <div class="row">
         <div
           class="col-md"
-          *ngFor="let section of (pageMetaData$ | async).payload?.sections"
+          *ngFor="
+            let section of (pageMetaData$ | async).payload?.sections;
+            let i = index
+          "
         >
           <mat-card>
             <mat-card-header>
               <mat-card-title>{{ section.label }}</mat-card-title>
-              <!-- <mat-card-subtitle></mat-card-subtitle> -->
             </mat-card-header>
             <mat-card-content class="section-card">
               <div class="row" *ngFor="let item of section.items">
@@ -28,56 +37,24 @@
                   <mat-icon
                     *ngIf="getItemMetaData(item)?.description"
                     aria-hidden="false"
-                    [matTooltip]="getItemMetaData(item)?.description"
+                    [matTooltip]="
+                      getItemMetaData(item)?.shortName +
+                      ': ' +
+                      getItemMetaData(item)?.description
+                    "
                     >info</mat-icon
                   >
-                  <!-- itemMeta: {{ handleNull(getItemMetaData(item).description) }} -->
                 </div>
-                <div class="col-md-9">{{ handleNull(animal[item]) }}</div>
+                <div class="col-md-9">
+                  {{ handleNull(animal[item]) }}
+                </div>
               </div>
               <!-- .row -->
             </mat-card-content>
-            <!-- <mat-card-actions>Action Buttons</mat-card-actions> -->
           </mat-card>
         </div>
       </div>
       <!-- .row -->
-
-      <!-- <div class="row">
-    <div class="col-md">
-      <mat-card>
-        <button mat-raised-button color="primary">
-          CTA Button
-        </button>
-        <button
-          mat-raised-button
-          href="https://www.google.com/"
-          target="_blank"
-        >
-          Secondary button
-        </button>
-      </mat-card>
-    </div>
-  </div> -->
-      <!-- .row -->
-
-      <!-- <div class="row">
-    <div class="col-sm">
-      <mat-card>
-        {{ animalData$ | async | json }}
-      </mat-card>
-    </div>
-    <div class="col-sm">
-      <mat-card>
-        {{ itemMetaData$ | async | json }}
-      </mat-card>
-    </div>
-    <div class="col-sm">
-      <mat-card>
-        {{ pageMetaData$ | async | json }}
-      </mat-card>
-    </div>
-  </div> -->
     </div>
     <!-- .container -->
   </div>

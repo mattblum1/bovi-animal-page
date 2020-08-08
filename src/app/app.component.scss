@@ -17,6 +17,16 @@ mat-toolbar {
   height: 80px;
 }
 
+.brand-container {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    margin: auto 0;
+  }
+}
+
 .container-fluid {
   background: url("https://bovisync.com/media/k2/items/cache/deb45d333d0414ba3de42155789fdb4a_XL.jpg")
     center 0px / cover no-repeat fixed;
