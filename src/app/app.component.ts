@@ -46,9 +46,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   getItemMetaData(itemId: string) {
-    const metaData = this.itemMetaData.find((i) => i.shortName === itemId);
-    console.warn('metaData', metaData);
-    return metaData;
+    return this.itemMetaData.find((i) => i.shortName === itemId);
   }
 
   handleNull(value: any) {
