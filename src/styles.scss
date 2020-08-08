@@ -1,0 +1,15 @@
+@import "bootstrap/dist/css/bootstrap-grid.min";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.mat-card-header .mat-card-header-text {
+  margin: 0;
+}

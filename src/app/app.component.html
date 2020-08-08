@@ -1,0 +1,61 @@
+<mat-toolbar>
+  <div class="row">
+    <div class="col-md">
+      <div class="brand-container">
+        <a href="https://bovisync.com"
+          ><img class="logo" src="../assets/images/logo.png"
+        /></a>
+        <span
+          ><a mat-raised-button href="https://bovisync.farm" target="_blank"
+            >Login</a
+          ></span
+        >
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="container-fluid pt-5 full-height">
+  <div *ngIf="(animalData$ | async).payload as animal">
+    <div *ngIf="(itemMetaData$ | async).payload as itemMeta">
+      <div class="row">
+        <div
+          class="col-md"
+          *ngFor="
+            let section of (pageMetaData$ | async).payload?.sections;
+            let i = index
+          "
+        >
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{ section.label }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="section-card">
+              <div class="row" *ngFor="let item of section.items">
+                <div class="col-md-3">
+                  {{ item }}
+                  <mat-icon
+                    *ngIf="getItemMetaData(item)?.description"
+                    aria-hidden="false"
+                    [matTooltip]="
+                      getItemMetaData(item)?.shortName +
+                      ': ' +
+                      getItemMetaData(item)?.description
+                    "
+                    >info</mat-icon
+                  >
+                </div>
+                <div class="col-md-9">
+                  {{ handleNull(animal[item]) }}
+                </div>
+              </div>
+              <!-- .row -->
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <!-- .row -->
+    </div>
+    <!-- .container -->
+  </div>
+</div>
